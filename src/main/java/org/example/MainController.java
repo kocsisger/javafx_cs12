@@ -26,7 +26,8 @@ public class MainController {
 
     @FXML
     void handleLoadButtonClicked() {
-        nameLabel.setText(model.getStudent().getName());
+    //    nameLabel.setText(model.getStudent().getName());
+        nameLabel.textProperty().bind(model.getStudent().nameProperty());
         creditsLabel.setText("" + model.getStudent().getCredits());
         dateOfBirthLabel.setText(model.getStudent().getDateOfBirth().toString());
         System.out.println("Firework!!!");
@@ -35,7 +36,7 @@ public class MainController {
     @FXML
     void handleChangeButtonClicked() {
         model.getStudent().setName("Tom Smith");
-        nameLabel.setText(model.getStudent().getName());
+     //   nameLabel.setText(model.getStudent().getName());
     }
 
     @FXML
